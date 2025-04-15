@@ -9,12 +9,12 @@
 
 </head>
 <body>
-    <header>
+    <header class="header_user">
         <div class="header_container">
-            <img src="img/logo_caesb.webp" alt="Logo Caesb">
-            <h1>CAESB</h1>
-            <img src="img/user.png" alt="User Icon">
-            <img src="img/log-out.png" alt="log-out Icon">
+            <div class="user_menu">
+                <img src="img/user.png" alt="User Icon">
+                <img src="img/log-out.png" alt="log-out Icon">
+            </div>
         </div>
     </header>
 
@@ -31,13 +31,17 @@
     </section>
 
     <main>
-        <div>
-            <button>NOVO</button>
-            <button>IMPORTAR</button>
+        <div class="user_list">
+            <div class="btn_list">
+                <button>NOVO</button>
+                <button>IMPORTAR</button>
+            </div>
             <h2>Lista de Usuários</h2>
-            <input type="text" placeholder="Pesquisar...">
+            <div class="search_bar_user">
+                <input type="text" placeholder="Pesquisar...">
+            </div>
         </div>
-        <div>
+        <div class="table_container_list">
             <table>
                 <thead>
                     <tr>
