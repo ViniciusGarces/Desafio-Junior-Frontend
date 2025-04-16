@@ -23,7 +23,7 @@
             <aside>
                 <nav>
                     <a href="#">Hub Lincenças</a>
-                    <a href="#">Usuários</a>
+                    <a href="user.html">Usuários</a>
                     <a href="#">Logs de Acesso</a>
                 </nav>
             </aside>
@@ -32,12 +32,16 @@
 
     <main>
         <div class="main_container">
-            <div>
-                <button>NOVO</button>
+            <div class="license_list">
+                <div class="btn_license">
+                    <button> <p>+</p> NOVO</button>
+                </div>
                 <h2>Lista de licenças</h2>
-                <input type="text" placeholder="Pesquisar...">
+                <div class="search_bar">
+                    <input type="text" placeholder="Pesquisar...">
+                </div>
             </div>
-            <div>
+            <div class="table_container_license">
                 <table>
                     <thead>
                         <tr>
@@ -48,14 +52,14 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Seate Based</td>
+                            <td>Seat Based</td>
                             <td>Ativa</td>
                             <td><img src="img/edit.png"></td>
                         </tr>
                         <tr>
                             <td>Login Based</td>
                             <td>Ativa</td>
-                            <td><td><img src="img/delete.png"></td></td>
+                            <td><img src="img/delete.png"></td>
                         </tr>
                     </tbody>
                 </table>

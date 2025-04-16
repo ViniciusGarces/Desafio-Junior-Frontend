@@ -22,7 +22,7 @@
         <div class="menu">
             <aside>
                 <nav>
-                    <a href="#">Hub Lincenças</a>
+                    <a href="hub_license.html">Hub Lincenças</a>
                     <a href="#">Usuários</a>
                     <a href="#">Logs de Acesso</a>
                 </nav>
@@ -35,9 +35,45 @@
             <div class="btn_list">
                 <button>NOVO</button>
                 <button>IMPORTAR</button>
+
+                <!--module for registering new users-->
+                <div class="user module">
+                   <div class="module_content">
+                        <h2>Cadastro de Usuário</h2>
+                        <form>
+                            <label for="login">Login:</label>
+                            <input type="text" id="login" name="login" required>
+
+                            <label for="name">Nome:</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="profile">Perfil:</label>
+                            <select id="profile" name="profile" required>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Supervisor">Supervisor</option>
+                                <option value="Encarregado">Encarregado</option>
+                            </select>
+
+                            <label for="license">Licença:</label>
+                            <select id="license" name="license" required>
+                                <option value="Seat Based">Seat Based</option>
+                                <option value="Login Based">Login Based</option>
+                            </select>
+
+                            <div class="btn_module_user">
+                                <button type="submit">Salvar</button>
+                                <button type="reset">Cancelar</button>
+                            </div>
+
+                        </form>
+                   </div> 
+                </div>
             </div>
             <h2>Lista de Usuários</h2>
-            <div class="search_bar_user">
+            <div class="search_bar">
                 <input type="text" placeholder="Pesquisar...">
             </div>
         </div>
