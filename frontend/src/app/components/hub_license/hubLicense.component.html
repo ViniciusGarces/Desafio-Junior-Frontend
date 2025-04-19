@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/src/app/components/hub_license/hubLicense.component.css">
+
+</head>
+<body>
+    <header class="header_user">
+        <div class="header_container">
+            <div class="user_menu">
+                <img src="/img/user.png" alt="User Icon">
+                <img src="/img/log-out.png" alt="log-out Icon">
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="menu">
+            <aside>
+                <nav>
+                    <a href="#">Hub Lincenças</a>
+                    <a href="user.html">Usuários</a>
+                    <a href="#">Logs de Acesso</a>
+                </nav>
+            </aside>
+        </div>
+    </section>
+
+    <main>
+        <div class="main_container">
+            <div class="license_list">
+                <div class="btn_license">
+                    <button> <p>+</p> NOVO</button>
+                </div>
+                <h2>Lista de licenças</h2>
+                <div class="search_bar">
+                    <input type="text" placeholder="Pesquisar...">
+                </div>
+            </div>
+            <div class="table_container_license">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Seat Based</td>
+                            <td>Ativa</td>
+                            <td><img src="img/edit.png"></td>
+                        </tr>
+                        <tr>
+                            <td>Login Based</td>
+                            <td>Ativa</td>
+                            <td><img src="img/delete.png"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

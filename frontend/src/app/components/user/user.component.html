@@ -1,0 +1,96 @@
+
+
+
+
+    <header class="header_user">
+        <div class="header_container">
+            <div class="user_menu">
+                <img src="/frontend/src/assets/img/user.png" alt="User Icon">
+                <img src="/src/assets/img/log-out.png" alt="log-out Icon">
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="menu">
+            <aside>
+                <nav>
+                    <a href="hub_license.html">Hub Lincenças</a>
+                    <a href="#">Usuários</a>
+                    <a href="#">Logs de Acesso</a>
+                </nav>
+            </aside>
+        </div>
+    </section>
+
+    <main>
+        <div class="user_list">
+            <div class="btn_list">
+                <button (click) ="newUser()">NOVO</button>
+                <button>IMPORTAR</button>
+
+                <!--module for registering new users-->
+                <div class="user" *ngIf="showForm">
+                   <div class="module_content">
+                        <h2>Cadastro de Usuário</h2>
+                        <form (ngSubmit)="saveUser()" #userForm="ngForm">
+                            <label for="login">Login:</label>
+                            <input type="text" id="login" [(ngModel)] = "user.login" name="login" required>
+
+                            <label for="name">Nome:</label>
+                            <input type="text" id="name" [(ngModel)] = "user.name" name="name" required>
+
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" [(ngModel)] = "user.email" name="email" required>
+
+                            <label for="profile">Perfil:</label>
+                            <select id="profile" [(ngModel)] = "user.profile" name="profile" required>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Supervisor">Supervisor</option>
+                                <option value="Encarregado">Encarregado</option>
+                            </select>
+
+                            <label for="license">Licença:</label>
+                            <select id="license" [(ngModel)] = "user.license" name="license" required>
+                                <option value="Seat Based">Seat Based</option>
+                                <option value="Login Based">Login Based</option>
+                            </select>
+
+                            <div class="btn_module_user">
+                                <button type="submit">Salvar</button>
+                                <button type="reset" (click) = "cancel()">Cancelar</button>
+                            </div>
+
+                        </form>
+                   </div> 
+                </div>
+            </div>
+            <h2>Lista de Usuários</h2>
+            <div class="search_bar">
+                <input type="text" placeholder="Pesquisar...">
+            </div>
+        </div>
+        <div class="table_container_list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Login</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Perfil</th>
+                        <th>Licença</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let user of users">
+                        <td>{{user.login}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.profile}}</td>
+                        <td>{{user.license}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
