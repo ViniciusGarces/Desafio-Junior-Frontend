@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="/src/app/components/login/login.component.css">
-
-</head>
-<body class="login_body">
+<section class="login_page">
     <header>
-        <img src="/img/logo_caesb.webp" alt="Logo Caesb">
+        <img src="assets/img/logo_caesb.webp" alt="Logo Caesb">
         <h1>CAESB</h1>
     </header>
 
@@ -18,11 +8,11 @@
         <div class="login_section">
             <div class=" card_login">
                 <h2>Login</h2>
-                <form class="login_form">
+                <form class="login_form" (ngSubmit)="login()">
                     <label for="user">Usuário:</label>
-                    <input type="text" id="user" name="user" required placeholder="Digite seu usuário">
+                    <input type="text" id="user" name="user" required placeholder="Digite seu usuário" [(ngModel)]="user">
                     <label for="password">Senha:</label>
-                    <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+                    <input type="password" id="password" name="password" required placeholder="Digite sua senha" [(ngModel)]="password">
 
                     <input type="date">
 
@@ -30,14 +20,13 @@
 
                     <a href="" class="forgot_password">Esqueceu a senha?</a>
 
-                    <img src="/img/log_digiteam.png" alt="Logo Digiteam">
+                    <img src="assets/img/log_digiteam.png" alt="Logo Digiteam">
                 </form>
             </div>
         </div>
     </section>
+</section>
 
     <footer>
         <p>© 2024 Copyright: Digiteam</p>
     </footer>
-</body>
-</html>

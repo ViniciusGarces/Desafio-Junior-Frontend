@@ -20,7 +20,9 @@ export class UserComponent implements OnInit {
         name: '',
         email: '',
         profile: '',
-        license: ''
+        license: '',
+        changePassword: false, // Added property
+        password: '' // Added property
     }
 
     showForm = false;
@@ -41,6 +43,8 @@ export class UserComponent implements OnInit {
           email: '',
           profile: '',
           license: 'ativo',
+          changePassword: false,
+          password: ''
         };
         this.showForm = true;
       }
@@ -51,15 +55,13 @@ export class UserComponent implements OnInit {
    
 
     saveUser(){
-        // Add the new user to the list
-        this.users.push(this.user);
+        this.user['changePassword'] = true;
+        this.user['password'] = '123456'; // ou uma senha temporária
+        this.users.push({ ...this.user });
 
-        // Save to localStorage
         localStorage.setItem('users', JSON.stringify(this.users));
 
         alert('Usuário salvo com sucesso!');
-
-        // Close the form and clear the fields
         this.cancel();
     }
 }
