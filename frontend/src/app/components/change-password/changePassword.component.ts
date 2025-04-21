@@ -31,6 +31,11 @@ export class ChangePasswordComponent {
             return;
         }
 
+        if(!this.isPasswordValid(this.newPassword)){
+            alert("A senha deve ter no mínimo 3 caracteres não vazios, conter pelo menos uma letra maiúscula, uma letra minúscula e um número.");
+            return;
+        }
+
        const users = JSON.parse(localStorage.getItem('users') || '[]');
        const user = users.find((user: { login: string; }) => user.login === this.login);  
        
@@ -42,8 +47,22 @@ export class ChangePasswordComponent {
             alert("Senha alterada com sucesso!");
 
             this.router.navigate(['/login']);
-        } else {
+        } 
+        else {
             alert("Usuário não encontrado!");
         }
     }
-} 
+
+
+    //Function to validate password with required criteria
+    isPasswordValid(password: string): boolean {
+        if(!password || password.trim().length <3){
+            return false;
+        }
+
+        const hasDigit = /\d/.test(password);
+        const hasUpper = /[A-Z]/.test(password);
+
+            return hasDigit && hasUpper;
+        }
+    }

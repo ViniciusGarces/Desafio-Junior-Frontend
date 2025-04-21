@@ -8,7 +8,7 @@ import { ChangePasswordComponent } from './components/change-password/changePass
 const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'user', component: UserComponent},
-    {path: 'hubLicense', component: HubLicenseComponent},
+    {path: 'hub_license', component: HubLicenseComponent},
     {path: 'changePassword', component: ChangePasswordComponent},
     {path: '', redirectTo: 'login', pathMatch: 'full'},
     {path: '**', redirectTo: 'login'}
