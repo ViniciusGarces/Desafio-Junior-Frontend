@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 
 export class UserComponent implements OnInit {
     
-
+    //list of all users
     users: any[] = [];
     // temporary object to store the form data
     user = {
@@ -33,6 +33,7 @@ export class UserComponent implements OnInit {
 
     constructor(private router: Router) { }
 
+    //method used when the component is loaded. gets the user from local storage and assigns the list of users
     ngOnInit(): void{
         const savedUser = localStorage.getItem('users');
         if (savedUser) {
@@ -40,6 +41,7 @@ export class UserComponent implements OnInit {
         }
     }
 
+    //
     newUser() {
         this.user = {
           login: '',
@@ -54,7 +56,13 @@ export class UserComponent implements OnInit {
         this.showForm = true;
       }
 
-    saveUser(){
+    saveUser(form: NgForm){
+        //Validates whether the form is filled out correctly.
+        if (form.invalid) {
+            alert('Preencha todos os campos obrigatórios: LOGIN,NOME, PERFIL e LICENÇA');
+            return;
+          }
+
         this.user['changePassword'] = true;
         
 
@@ -75,18 +83,19 @@ export class UserComponent implements OnInit {
             this.user['password'] = '123456'; // Default password for new users
             this.users.push({ ...this.user }); // Add new user
         }
-        
+        //Updates localStorage and closes the form.
         localStorage.setItem('users', JSON.stringify(this.users));
         alert('Usuário salvo com sucesso!');
         this.cancel();
     }
 
+    //Cancels editing or creation.
     cancel(){
         this.showForm = false;
         this.editUserIndex = null; // Reset edit index
     }
    
-
+    //Loads the data of the selected user into the form for editing.
     editUser(index: number) {
         this.editUserIndex = index;
         this.user = { ...this.users[index] }; // clone user data
@@ -100,6 +109,7 @@ export class UserComponent implements OnInit {
         localStorage.setItem('users', JSON.stringify(this.users));
     }
 
+    //Redirects to the login screen.
     logout() { 
         this.router.navigate(['/login']);
     }

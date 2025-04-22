@@ -25,6 +25,7 @@ export class ChangePasswordComponent {
         }   
     }
 
+    //method for password verification
     changePassword(){
         if(this.newPassword !== this.confirmPassword) {
             alert("Senhas divergentes!");
@@ -36,6 +37,7 @@ export class ChangePasswordComponent {
             return;
         }
 
+        //update password data in local storage
        const users = JSON.parse(localStorage.getItem('users') || '[]');
        const user = users.find((user: { login: string; }) => user.login === this.login);  
        

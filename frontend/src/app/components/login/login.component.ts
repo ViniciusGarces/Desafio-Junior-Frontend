@@ -16,8 +16,9 @@ export class LoginComponent {
   loginDate: string = '';
 
   constructor(private router: Router) {}
-
+  
   login() {
+    //Checks if the user has selected the login date
     if(!this.loginDate) {
       alert("Selecione a data de login!");
       return;
@@ -28,6 +29,7 @@ export class LoginComponent {
 
     const loginAccess = JSON.parse(localStorage.getItem('loginAccess') || '{}');
   
+    // Search for a user with the same username and password as those entered
     const foundUser = users.find((u: any) => u.login === this.user && u.password === this.password);
 
     if (!foundUser) {
@@ -35,10 +37,13 @@ export class LoginComponent {
       return;
     }
 
+    //redirects to the change password screen if this is the first time you access it
     if (foundUser.changePassword) {
       this.router.navigate(['/changePassword'], { state: { login: foundUser.login } });
       return;
     } 
+
+    //checks if there is a record of accesses for the date for the login-based license type. If there is none, it creates an empty array.
     if(foundUser.license == 'Login Based'){
       if(!loginAccess[this.loginDate]){
         loginAccess[this.loginDate] = [];
@@ -51,6 +56,7 @@ export class LoginComponent {
     // Sets the maximum number of licenses available per day
     const maxLicenses = 5;
 
+    //access record. If the access limit is reached, it does not allow access. Otherwise, it allows access and adds it to the array.
     if(!loginUnique.has(this.user)){
       if(loginUnique.size >= maxLicenses){
         alert("Limite de licenças atingido para o dia");
