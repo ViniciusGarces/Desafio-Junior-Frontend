@@ -56,14 +56,23 @@ export class UserComponent implements OnInit {
 
     saveUser(){
         this.user['changePassword'] = true;
-        this.user['password'] = '123456'; // ou uma senha temporária
+        
 
         if(this.editUserIndex !== null){
+            // Keep the old password when editing the user
+            const oldPassword = this.users[this.editUserIndex].password;
+            const oldChangePassword = this.users[this.editUserIndex].changePassword;
+
             // Update existing user
-            this.users[this.editUserIndex] = { ...this.user };
+            this.users[this.editUserIndex] = { 
+                ...this.user,
+                password: oldPassword, // Keep the old password
+                changePassword: oldChangePassword // Keep the old changePassword value
+             };
             this.editUserIndex = null; // Reset edit index
         }
         else{
+            this.user['password'] = '123456'; // Default password for new users
             this.users.push({ ...this.user }); // Add new user
         }
         

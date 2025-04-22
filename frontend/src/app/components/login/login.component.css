@@ -1,39 +1,63 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
 .login_page{
     background-image: url('/assets/img/background_img.png');
     background-size: cover;
-}
-
-header{
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 1;
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.logo_caesb{
+    display: flex;
     align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-left: 50px;
 }
 
-header, img{
-    width: 50px;
-    height: 50px;
-}
-
-header h1{
+.logo_caesb h1{
     font-size: 30px;
-    color: #3a65f0;
+    color: #041e74;
+}
+
+
+.login_page img{
+    width: 40px; 
 }
 
 /*centralizes the login card*/
 .login_section{
-    display: flex;
-    justify-content:left;
-    align-items: center;
-    height: 78vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex: 1;
+  padding: 50px;
 }
 
 .card_login{
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    border: 1px solid #3a65f0;
-    border-radius: 10px;
+    border: 3px solid #3a65f0;
+    border-radius: 40px;
     padding: 20px;
     width: 400px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -79,3 +103,11 @@ header h1{
     width: 50px;
     height: 50px;
 }
+
+footer{
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }

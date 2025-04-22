@@ -1,7 +1,15 @@
-*{
+
+
+*{ 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.user_page{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .header_user{
@@ -9,32 +17,86 @@
   height: 50px;
   background-color: rgb(43, 149, 168);
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo_caesb{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo_caesb img{
+  width: 35px;
   margin: 0;
-  padding: 0;
+}
+
+.logo_caesb h1{
+  font-size: 30px;
+  color: #041e74;
 }
 
 .user_menu {
-  right: -100px;
-  position: absolute;
+  display: flex;
+  align-items: center;
   gap: 10px;
-  padding: 10px;
 }
 
 .user_menu img {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: px;
   cursor: pointer;
 }
 
-.header_container{
+.container_user{
   display: flex;
-  justify-content: flex-end;
+  flex: 1;
+}
+
+.search_input_container {
+  position: relative; /* Define um contêiner relativo para posicionar os elementos */
+  display: flex;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  width: 80%;
+  width: 300px; /* Largura do campo de pesquisa */
+}
+
+.search_input_container img {
+  position: absolute; /* Posiciona a imagem dentro do input */
+  left: 270px; /* Espaçamento à esquerda */
+  width: 15px; /* Tamanho da imagem */
+  height: 15px;
+  pointer-events: none; /* Evita que a imagem interfira na interação do usuário */
+}
+
+
+aside{
+  width: 220px;
+  background-color: #0e5e5e;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+nav a{
+  color: white;
+  text-decoration: none;
   padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+nav a:hover{
+  background-color: #1aaa97;
+  transform: scale(1.05);
+}
+
+main{
+  flex: 1;
 }
 
 .search_bar{
@@ -77,6 +139,12 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+.module_content h2{
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1aaa97;
+}
+
 .module_content form{
   display: flex;
   flex-direction: column;
@@ -90,12 +158,26 @@
 .module_content input, .module_content select{
   border-radius: 5px;
   border: 1px solid #111111;
+  height: 25px;
 }
 
 .btn_module_user{
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+}
+
+.btn_module_user button{
+  border: none;
+  border-radius: 4px;
+  background-color: #1aaa97;
+  padding: 10px;
+  
+}
+
+.btn_module_user button:hover{
+  background-color: #11695d;
+  transform: scale(1.05);
 }
 
 .user_list{
@@ -105,7 +187,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
-  border: 2px solid #3a65f0;
+  border: 1px solid #0c0c0c;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 }
@@ -123,6 +205,7 @@
   border-radius: 4px;
   background-color: #1aaa97;
   padding: 10px;
+  
 }
 
 .btn_list button:hover{
@@ -130,10 +213,15 @@
   transform: scale(1.05);
 }
 
+.btn_list button img {
+  width: 13px; /* Ajuste o tamanho da imagem */
+  height: 13px;
+}
+
 .table_container_list{
   width: 80%;
   margin: 0 auto;
-  border: 2px solid #3a65f0;
+  border: 1px solid #0c0c0c;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
@@ -150,6 +238,12 @@
 .table_container_list th, .table_container_list td{
   padding: 10px;
   border-bottom: 1px solid #ddd;
+}
+
+.table_container_list td:last-child {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 /*specifying the alignment of the content in the table*/
@@ -183,3 +277,20 @@
   cursor: pointer;
 }
 
+table tbody:nth-child(even){
+  background-color:#f9f9f9;
+}
+
+table th {
+  background-color: #21b1c4;
+  color: white;
+  font-weight: 600;
+}
+
+
+footer{
+  text-align: center;
+  padding: 10px;
+  background-color: #f1f1f1; 
+  margin-top: auto;
+}

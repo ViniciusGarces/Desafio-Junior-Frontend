@@ -18,23 +18,17 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   login() {
-
     if(!this.loginDate) {
       alert("Selecione a data de login!");
       return;
     }
 
-
-    console.log('Usuário:', this.user);  // Verifique se o valor de 'user' está correto
-    console.log('Senha:', this.password);  // Verifique se o valor de 'password' está correto
   
     const users = JSON.parse(localStorage.getItem('users') || '[]');
-    console.log('Usuários:', users); // Verifique o conteúdo de 'users' no console
 
     const loginAccess = JSON.parse(localStorage.getItem('loginAccess') || '{}');
   
     const foundUser = users.find((u: any) => u.login === this.user && u.password === this.password);
-    console.log('Usuário encontrado:', foundUser);  // Verifique o usuário encontrado
 
     if (!foundUser) {
       alert('Usuário ou senha inválidos!');
@@ -58,14 +52,14 @@ export class LoginComponent {
     const maxLicenses = 5;
 
     if(!loginUnique.has(this.user)){
-      if(loginUnique.size > maxLicenses){
+      if(loginUnique.size >= maxLicenses){
         alert("Limite de licenças atingido para o dia");
         return;
       }
       else{
         loginToday.push(this.user);
         loginAccess[this.loginDate] = loginToday;
-        localStorage.setItem('loginAcess', JSON.stringify(loginAccess));
+        localStorage.setItem('loginAccess', JSON.stringify(loginAccess));
       }
     }
   }
