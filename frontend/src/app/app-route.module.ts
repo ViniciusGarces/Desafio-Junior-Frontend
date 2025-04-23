@@ -9,7 +9,7 @@ import { HubLicenseComponent } from './components/hub-license/hubLicense.compone
 const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'user', component: UserComponent},
-    {path: 'hub-license', component: HubLicenseComponent},
+    {path: 'hubLicense', component: HubLicenseComponent},
     {path: 'changePassword', component: ChangePasswordComponent},
     {path: '', redirectTo: 'login', pathMatch: 'full'},
     {path: '**', redirectTo: 'login'}
