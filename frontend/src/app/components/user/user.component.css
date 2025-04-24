@@ -55,23 +55,6 @@
   flex: 1;
 }
 
-.search_input_container {
-  position: relative; 
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 300px; 
-}
-
-.search_input_container img {
-  position: absolute; 
-  right: 10px;
-  left: auto; 
-  width: 15px; 
-  height: auto;
-  pointer-events: none; 
-}
-
 /*sidebar*/
 aside {
   width: 200px;
@@ -116,6 +99,23 @@ main{
   align-items: center;
   justify-content: center;
   margin-right: 50px;
+}
+
+.search_input_container {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 300px; 
+}
+
+.search_input_container img {
+  position: absolute; 
+  right: 10px;
+  left: auto; 
+  width: 15px; 
+  height: auto;
+  pointer-events: none; 
 }
 
 .search_bar input{
@@ -342,14 +342,14 @@ footer{
   padding: 8px 10px;
   white-space: nowrap;
  }
- .user_list{
+ .license_list{
   margin-top: 10px;
   padding: 10px;
  }
- .btn_list{
+ .btn_lcense{
   margin-left: 10px;
  }
- .table_container_list{
+ .table_container_license{
   margin-bottom: 10px;
  }
 }

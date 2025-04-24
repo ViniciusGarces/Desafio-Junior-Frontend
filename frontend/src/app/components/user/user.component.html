@@ -6,7 +6,7 @@
         </div>
         <div class="user_menu">
             <img src="assets/img/user.png" alt="User Icon">
-            <img src="assets/img/log-out.png" alt="log-out Icon" (click)="logout()">
+            <img src="assets/img/log-out.png" alt="log-out Icon" (click)="logout()" title="Sair">
         </div>
     </header>
 
@@ -14,9 +14,9 @@
     <div class="container_user">
         <aside>
             <nav>
-                <a routerLink="/hubLicense"><img src="assets/img/file.png"> Hub Lincenças</a>
-                <a href="#"><img src="assets/img/users.png">Usuários</a>
-                <a href="#"><img src="assets/img/log.png">Logs de Acesso</a>
+                <a routerLink="/hubLicense"><img src="assets/img/file.png"> Hub Licenças</a>
+                <a routerLink="/user"><img src="assets/img/users.png">Usuários</a>
+                <a routerLink="/user"><img src="assets/img/log.png" >Logs de Acesso</a>
             </nav>
         </aside>
 
@@ -57,8 +57,8 @@
                             <td>{{user.profile}}</td>
                             <td>{{user.license}}</td>
                             <td>
-                                <img src="assets/img/edit.png" (click)="editUser(i)">
-                                <img src="assets/img/delete.png" (click)="deleteUser(i)">
+                                <img src="assets/img/edit.png" (click)="editUser(i)" title="Editar">
+                                <img src="assets/img/delete.png" (click)="deleteUser(i)" title="Excluir">
                             </td>
                             
                         </tr>

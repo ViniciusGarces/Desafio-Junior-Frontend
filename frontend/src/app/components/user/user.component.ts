@@ -104,14 +104,19 @@ export class UserComponent implements OnInit {
     }
 
     deleteUser(index: number){
+        const confirmation = confirm('Tem certeza que deseja excluir este usuário?');
+        if(confirmation) {
         // Remove the user from the array
         this.users.splice(index, 1);
         // Update localStorage
         localStorage.setItem('users', JSON.stringify(this.users));
+        }
+        
     }
 
     //Redirects to the login screen.
     logout() { 
         this.router.navigate(['/login']);
     }
+
 }
