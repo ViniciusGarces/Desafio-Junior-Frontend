@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { profile } from 'node:console';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +16,28 @@ export class LoginComponent {
   password: string = '';
   loginDate: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    // Checks if there are no users in local storage and creates a default user if necessary
+    if(users.length === 0){
+      const userDefault = {
+        login: 'admin',
+        name:'Admin',
+        email:'admin@gmail.com',
+        cpf:'12345678900',
+        profile: 'Administrador',
+        license: 'Login Based',
+        changePassword: false,
+        password: 'Admin123',
+      }
+      // Adds the default user to local storage
+      users.push(userDefault);
+      localStorage.setItem('users', JSON.stringify(users));
+      
+    }
+  }
   
+
   login() {
     //Checks if the user has selected the login date
     if(!this.loginDate) {
